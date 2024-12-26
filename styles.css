@@ -1,0 +1,145 @@
+
+body{
+    background-color:black;
+    color:white;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 8px;
+    
+  } 
+  .header {
+    background-color: #333; /* Dark background for the header */
+    color: white;
+    width: 100%;
+    padding: 20px 0; /* Top and bottom padding */
+    display: flex;
+    justify-content: space-between; /* Space out elements */
+    align-items: center; /* Align items vertically */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100; /* Ensures the header stays on top */
+}
+
+/* Navigation section */
+header nav {
+    margin-left: auto; /* Pushes the navigation to the right */
+}
+
+.header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Make the navigation items horizontal */
+}
+
+.header nav ul li {
+    margin: 0 15px; /* Space between navigation items */
+}
+
+.header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    margin-right: 5px;
+}
+
+.header nav ul li a:hover {
+    color: #ff9800; /* Color change on hover */
+}
+  .loading{
+    position: relative;       
+    width: 80px;
+    height: 80px;     
+    border-radius: 50%;     
+    animation: rotateCircle 4s linear infinite; 
+  }
+
+  .loading > div{
+    
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    animation-name: faded;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    width: 0px;
+    height: 100px;
+  }
+  
+  /* ====== Position Each Dot Around the Circle ====== */
+  /* Lower the 60px to bring them closer; increase to push them farther out */
+  #test1 {
+    transform: translate(-50%, -50%) rotate(0deg)   translate(50px) rotate(-0deg);
+    animation-delay: 0s;
+  }
+  #test2 {
+    transform: translate(-50%, -50%) rotate(60deg)  translate(50px) rotate(-60deg);
+    animation-delay: 0.16s;
+  }
+  #test3 {
+    transform: translate(-50%, -50%) rotate(120deg) translate(50px) rotate(-120deg);
+    animation-delay: 0.33s;
+  }
+  #test4 {
+    transform: translate(-50%, -50%) rotate(180deg) translate(50px) rotate(-180deg);
+    animation-delay: 0.49s;
+  }
+  #test5 {
+    transform: translate(-50%, -50%) rotate(240deg) translate(50px) rotate(-240deg);
+    animation-delay: 0.66s;
+  }
+  #test6 {
+    transform: translate(-50%, -50%) rotate(300deg) translate(50px) rotate(-300deg);
+    animation-delay: 0.82s;
+  }
+
+  
+  
+  h1{
+    color: white;
+    width: 200px;
+    height: 50px;
+    margin: 1px;
+  }
+  h2{
+    color: white;
+    width: 300px;
+    height: 30px;
+    animation-name: fade;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    opacity: 0;
+    margin: 1px;
+ 
+  }
+  
+  @keyframes faded{
+    from {color: black;}
+    to {color: white;}
+  }
+  @keyframes fade{
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100%{opacity: 0;}
+  }
+  @keyframes rotateCircle {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  
+
