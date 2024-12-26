@@ -1,29 +1,35 @@
 
 body{
-    background-color:black;
-    color:white;
+    background-color:white;
+    color:black;
     width: 100%;
     height: 100vh;
     margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     padding: 8px;
+    transition: background-color 0.5s ease, color 0.5s ease;
     
   } 
-  .header {
-    background-color: #333; /* Dark background for the header */
+  .container{
+    margin: auto;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  
+  .dark-mode{
+    background-color: black;
     color: white;
-    width: 100%;
-    padding: 20px 0; /* Top and bottom padding */
+  }
+  .header {
+    width: 98%;
+    padding-right: 50px;
     display: flex;
     justify-content: space-between; /* Space out elements */
     align-items: center; /* Align items vertically */
-    position: fixed;
     top: 0;
     left: 0;
-    z-index: 100; /* Ensures the header stays on top */
+    position: relative; 
 }
 
 /* Navigation section */
@@ -40,19 +46,28 @@ header nav {
 
 .header nav ul li {
     margin: 0 15px; /* Space between navigation items */
+    
 }
 
 .header nav ul li a {
+    
     text-decoration: none;
-    color: white;
     font-size: 1rem;
     margin-right: 5px;
+    
+}
+.header nav ul li a:visited,
+.header nav ul li a:hover,
+.header nav ul li a:active {
+  color: inherit;       /* This ensures they match their parent element's color */
+  text-decoration: none;
+  font-size: 1rem;
+  margin-right: 5px;
 }
 
-.header nav ul li a:hover {
-    color: #ff9800; /* Color change on hover */
-}
+
   .loading{
+    margin: auto;
     position: relative;       
     width: 80px;
     height: 80px;     
@@ -106,13 +121,11 @@ header nav {
   
   
   h1{
-    color: white;
     width: 200px;
     height: 50px;
     margin: 1px;
   }
   h2{
-    color: white;
     width: 300px;
     height: 30px;
     animation-name: fade;
