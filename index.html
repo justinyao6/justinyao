@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>i dont even know</title>
+  <title>ningning's page</title>
   <link rel="stylesheet" href="styles.css">
   <script type="text/javascript" src="src/mode.js" defer></script>
 </head>
@@ -12,7 +12,7 @@
     <header class="header">
         <nav>
             <ul>
-                <li><a href="#experience" id="color">Experience</a></li>
+                <li><a href="#job-title" id="color">Experience</a></li>
                 <li><a href="#projects" id="color2">Projects</a></li>
             </ul>
         </nav>
@@ -41,18 +41,40 @@
     <div class = "container">
         
         <div id="formatting">
-          <p>Welcome to my page, I'm</p>
-          <h1>
-            Justin Yao
-          </h1>
-          <h2 id="description">Software Engineer</h2>
-          <h3></h3>
+          <p>Howdy! My name is</p>
+          <div id="name">
+            <h1>
+              Justin Yao.
+            </h1>
+            <h2 id="description"></h2>
+          </div>
+          <p id="info">I'm currently pursuing a <em>Bachelor's in Computer Science</em> at <strong>UT Dallas</strong>. <br> 
+            Interested in <strong>Software Engineering</strong>, Creating <strong>LLMs</strong>, Understanding Business <strong>Models</strong>, and More. <small>maybe quant.</small>
+          </p>
         </div>
 
     </div>
-
-    
-        
+    <p id="job-title">Places I've Worked At</p>
+    <section class="Experience">
+      <div id="company">
+        <p id="WM" onclick="changeOpacity(this.id)">WM</p>
+        <p id="TekCrafter">TekCrafter</p>
+        <p id="Steel">Steel City Codes</p>
+      </div>
+      <div id="company-description">
+          <strong>Software Engineer @ Company</strong>
+          <div class="language"><img src="clogo.png" alt="" class="logo">C#</div>
+         
+          <small>mm/yy-mm/yy</small>
+          <br>
+          <ul>
+            <li>yadeydada</li>
+            <li>yadeydada</li>
+            <li>yadeydada</li>
+          </ul>
+      </div>
+      
+    </section>
   <script type="module" src="./src/script.js"></script>
 </body>
 </html>
