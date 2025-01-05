@@ -41,7 +41,7 @@
     <div class = "container">
         
         <div id="formatting">
-          <p>Howdy! My name is</p>
+          <p style="font-size: 30px;">Howdy! My name is</p>
           <div id="name">
             <h1>
               Justin Yao.
@@ -54,15 +54,15 @@
         </div>
 
     </div>
-    <p id="job-title">Places I've Worked At</p>
+    <p id="job-title" style="margin-top: 25px;">Places I've Worked At</p>
     <section class="Experience">
       <div id="company">
-        <p id="WM" onclick="changeOpacity(this.id)">WM</p>
-        <p id="TekCrafter">TekCrafter</p>
-        <p id="Steel">Steel City Codes</p>
+        <p id="WM" onclick="changeDescription(this.id)" >WM</p>
+        <p id="TekCrafter" onclick="changeDescription(this.id)" >TekCrafter</p>
+        <p id="Steel" onclick="changeDescription(this.id)" >Steel City Codes</p>
       </div>
       <div id="company-description">
-          <strong>Software Engineer @ Company</strong>
+          <strong>Software Engineer <span style="color: aquamarine;">@ Company</span></strong>
           <div class="language"><img src="clogo.png" alt="" class="logo">C#</div>
          
           <small>mm/yy-mm/yy</small>
@@ -74,6 +74,12 @@
           </ul>
       </div>
       
+    </section>
+    <section>
+      <div>
+        typestuff
+        typestuff
+      </div>
     </section>
   <script type="module" src="./src/script.js"></script>
 </body>

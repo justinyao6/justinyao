@@ -1,6 +1,6 @@
 
 
-const words = ["(Deepening further studies)", "(Learning design fundamentals)", "(Currently creating LLMs )", "(Playing Volleyball)"];
+const words = ["(Deepening further studies)", "(Learning design fundamentals)", "(Currently creating LLMs )", "(Playing Volleyball or Pickleball)"];
 let currentIndex = 0;
 const header = document.getElementById("description");
 
@@ -15,3 +15,6 @@ header.addEventListener("animationiteration", changeText);
 
 // Initialize the first word
 changeText();
+
+//default WM 
+//document.getElementById("WM").click();
