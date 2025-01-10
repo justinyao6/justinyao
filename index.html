@@ -12,7 +12,7 @@
     <header class="header">
         <nav>
             <ul>
-                <li><a href="#job-title" id="color">Experience</a></li>
+                <li><a href="#experiences" id="color">Experience</a></li>
                 <li><a href="#projects" id="color2">Projects</a></li>
             </ul>
         </nav>
@@ -43,7 +43,7 @@
         <div id="formatting">
           <p style="font-size: 30px;">Howdy! My name is</p>
           <div id="name">
-            <h1>
+            <h1 style="color: tomato;" id="full-name">
               Justin Yao.
             </h1>
             <h2 id="description"></h2>
@@ -52,9 +52,19 @@
             Interested in <strong>Software Engineering</strong>, Creating <strong>LLMs</strong>, Understanding Business <strong>Models</strong>, and More. <small>maybe quant.</small>
           </p>
         </div>
-
+        
     </div>
-    <p id="job-title" style="margin-top: 25px;">Places I've Worked At</p>
+    <div class="work-experience-transition">
+      <a href="#experiences"><span id="arrow-test"></span></a>
+      <svg class="arrows">
+        <path class="a1" d="M0 0 L20 21 L40 0"></path>
+        <path class="a2" d="M0 13 L20 34 L40 13"></path>
+        <path class="a3" d="M0 26 L20 47 L40 26"></path>
+      </svg>
+      <p id="experiences" >Places I've Worked At</p>
+      
+    </div>
+    
     <section class="Experience">
       <div id="company">
         <p id="WM" onclick="changeDescription(this.id)" >WM</p>
@@ -62,19 +72,29 @@
         <p id="Steel" onclick="changeDescription(this.id)" >Steel City Codes</p>
       </div>
       <div id="company-description">
-          <strong>Software Engineer <span style="color: aquamarine;">@ Company</span></strong>
-          <div class="language"><img src="clogo.png" alt="" class="logo">C#</div>
-         
-          <small>mm/yy-mm/yy</small>
-          <br>
-          <ul>
-            <li>yadeydada</li>
-            <li>yadeydada</li>
-            <li>yadeydada</li>
+          <strong id="title">Software Engineer <span style="color: aquamarine;">@ Company</span></strong>
+          <div class="language-box"></div>
+          <em id="date">date</em>
+          <ul id="points">
+            <li>point1</li>
+            <li>point2</li>
+            <li>point3</li>
           </ul>
       </div>
-      
     </section>
+
+    <div class="project-experience-transition">
+      <a href="#projects"><span id="arrow-test"></span></a>
+      <p id="projects" >Some of my Projects</p>
+      <svg class="arrows">
+        <path class="a1" d="M0 0 L20 21 L40 0"></path>
+        <path class="a2" d="M0 13 L20 34 L40 13"></path>
+        <path class="a3" d="M0 26 L20 47 L40 26"></path>
+      </svg>
+      
+      
+    </div>
+
     <section>
       <div>
         typestuff

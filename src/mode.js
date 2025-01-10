@@ -6,15 +6,18 @@ let mode = "light";
 let selectedCompany = "WM";
 
 function myFunction(){
+    const name = document.getElementById("full-name");
     element.classList.toggle("dark-mode");
     
     if(element.classList.contains("dark-mode")){
         localStorage.setItem('theme','dark')
         mode = 'dark';
+        name.style.color = 'tomato';
     }
     else{
         localStorage.setItem('theme', 'light')
         mode = 'light';
+        name.style.color = '#5360FD';
     }
     
     changeDescription(selectedCompany);
@@ -22,12 +25,15 @@ function myFunction(){
 //loads the preference
 window.addEventListener('DOMContentLoaded', () =>{
     const user_saved = localStorage.getItem('theme');
+    const name = document.getElementById("full-name");
     if(user_saved == 'dark'){
         element.classList.add("dark-mode");
         mode = 'dark';
+        name.style.color = 'tomato';
     }
     else{
         mode = 'light';
+        name.style.color = '#5360FD';
     }
     changeDescription(selectedCompany);
 });
@@ -48,6 +54,8 @@ function changeOpacity(id){
 
 function changeDescription(id){
     const description = document.getElementById("company-description");
+    const languagesContainer = document.querySelector('.language-box');
+    const titles = document.getElementById("title");
     let color_query;
     
     if(mode == 'dark'){
@@ -60,29 +68,42 @@ function changeDescription(id){
     }
     const descriptions = {
         WM: {
-            title: `Software Engineer`+ color_query + ` @ WM</span>`,
-            language: '<img src="clogo.png" alt="" class="logo">C#',
+            title: `<u> Software Engineer</u>`+ color_query + ` @ WM</span>`,
+            languages: `
+                <div class="languages"><img src="/logos/clogo.png" alt="C#" class="logo"> C#</div>
+                <div class="languages"><img src="/logos/Microsoft_.NET_logo.svg.png" alt=".Net" class="logo"> .Net</div>
+                <div class="languages"><img src="/logos/aws.png" alt="Aws" class="logo"> AWS</div>
+                <div class="languages"><img src="/logos/oracle.png" alt="SQL" class="logo"> SQL</div>
+            `,
             dates: "June-August 2024",
             points: `
-                  <li>Developed a C#/.NET and SQL application to enhance Fastlane’s capabilities.</li>
-                <li>Integrated POS systems with modern databases for improved functionality.</li>
-                <li>Automated ticket processing across landfill sites, streamlining operations.</li>
-            `,
+                <li>Developed a <strong> C#/.NET </strong> and <strong>SQL</strong> application to enhance and provide modern features to Fastlane(WM's POS System)</li>
+                <li>Updated<strong> SQL queries</strong> to enhance the Fastlane application in <strong>Oracle</strong> and <strong>SSMS </strong>databases for major project release
+                <li><strong>Automated</strong> the email ticketing process using Twilio and stored ticket data on AWS S3, streamlining operations.</li>
+                `,
     
         },
         TekCrafter: {
-            title: `Frontend Developer`+ color_query+ ` @ TekCrafter</span>`,
-            //language: '<img src="jslogo.png" alt="" class="logo">JavaScript',
+            title: `<u>Frontend Developer</u>`+ color_query+ ` @ TekCrafter</span>`,
+            languages: `
+                <div class="languages"><img src="/logos/jslogo.png" alt="JavaScript" class="logo">JavaScript</div>
+                <div class="languages"><img src="/logos/html5.png" alt="HTML" class="logo">HTML</div>
+                <div class="languages"><img src="/logos/css.svg" alt="CSS" class="logo">CSS</div>
+            
+            `,
             dates: "January-May 2024",
             points: `
-               <li>Designed and implemented a responsive website for a tech consulting firm.</li>
-        <li>Enhanced scheduling features and showcased the company’s portfolio.</li>
-        <li>Collaborated with a team using Agile methodologies to deliver ahead of schedule.</li>
+                <li>Designed and implemented a responsive website for a tech consulting firm.</li>
+                <li>Enhanced scheduling features and showcased the company’s portfolio.</li>
+                <li>Collaborated with a team using Agile methodologies to deliver ahead of schedule.</li>
             `,
         },
         Steel: {
-            title: `Teaching Assistant` + color_query+ ` @ Steel City Codes</span>`,
-            //language: '<img src="pythonlogo.png" alt="" class="logo">Python',
+            title: `<u>Teaching Assistant</u>` + color_query+ ` @ Steel City Codes</span>`,
+            languages: `
+                <div class="languages"><img src="/logos/java.webp" alt="Java" class="logo">Java</div>
+                <div class="languages"><img src="/logos/python.png" alt="Python" class="logo">Python</div>
+            `,
             dates: "January-May 2022",
             points: `
               <li>Mentored students in Java programming and coding practices.</li>
@@ -93,19 +114,23 @@ function changeDescription(id){
     }
     description.classList.remove("visible");
     setTimeout(() => {
-    const companyData = descriptions[id];
-    if(companyData) {
-        description.innerHTML = `
-      <strong>${companyData.title}</strong>
-      <div class="language">${companyData.language}</div>
-      <small>${companyData.dates}</small>
-      <br>
-      <ul>
-        ${companyData.points}
-      </ul>
-    `;
-    }
-    description.classList.add("visible"); // Fade in new content
+        const companyData = descriptions[id];
+        if(companyData) {
+           
+          
+           description.innerHTML = `
+            <strong id="title">${companyData.title}</strong>
+            <div class="language-box">${companyData.languages}</div>
+            <em id="date">${companyData.dates}</em>
+            <ul id="points">
+                ${companyData.points}
+            </ul>
+            `;
+            
+           
+        }
+
+        description.classList.add("visible"); // Fade in new content
   }, 500);
 
 

@@ -16,11 +16,17 @@ body{
     margin: 0;
     transition: background-color 1.25s ease-in-out, color 1.25s ease-in-out;
     font-family: Sf-Pro-Light;
+    
   } 
+
+  html,body{
+    scroll-behavior: smooth;
+  }
  
   .container{
     margin: auto;
-    margin-top: 30px;
+    margin-top: 10px;
+    margin-bottom: 25px;
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -45,21 +51,23 @@ body{
     font-size: 4px;
     margin-top: 5px;
 }
-
+#full-name{
+  transition: 2s ease-in-out;
+}
 /* Navigation section */
 header nav {
-    margin-left: auto; /* Pushes the navigation to the right */
+    margin-left: auto; 
 }
 
 .header nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Make the navigation items horizontal */
+    display: flex; 
 }
 
 .header nav ul li {
-    margin: 0 15px; /* Space between navigation items */
+    margin: 0 15px; 
     
 }
 
@@ -141,22 +149,37 @@ header nav {
     transform: translate(-50%, -50%) rotate(300deg) translate(30px) rotate(-300deg);
     animation-delay: 0.82s;
   }
+  
+  .work-experience-transition{
+    display: flex;
+    margin: auto;
+    width: 30%;
+    position: relative;
+  }
+  .project-experience-transition{
+    display: flex;
+    margin: auto;
+    width: 30%;
+    position: relative;
+  }
+
+
+
 
   /*Experience section*/
   .Experience{
     margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
     display: flex;
     flex-direction: row;
-    height: 300px;
+    height: 450px;
     width: 80%;
   }
   
   #company{
     display: flex;
     flex-direction: column;
-    width: 150px;
+    width: 200px;
+    height: 100%;
     transition: 0.5s ease-in-out;
   }
   
@@ -164,32 +187,39 @@ header nav {
     opacity: .50;
     transition: 0.5s ease, opacity 0.3s ease; 
     cursor: pointer;
-    margin: 20px;
+    height: 60px;
+    font-size: 20px;
   }
   #company p:hover{
     opacity: 1 !important;
   }
  
   
-
+  #projects{
+    display: inline-block;
+    font-size: large;
+    font-family: Sf-Pro-Bold;
+    margin-right: 15px;
+  }
  
-  #job-title{
-    text-align: center;
-    margin-top: 30px;
+  #experiences{
+    display: inline-block;
+    font-size: large;
     font-family: Sf-Pro-Bold;
   }
 
   #company-description{
     width:60%;
-    padding-top: 15px;
+    padding-top: 18px;
     opacity: 0;
     transition: 0.5s ease-in-out;
+    font-size: 20px;
   }
   #company-description.visible {
     opacity: 1; 
   }
   #company-description li{
-    margin: 10px;
+    margin: 20px;
   }
   .selected-1{
     color: aquamarine;
@@ -199,30 +229,47 @@ header nav {
     color: orangered;
     opacity: 1;
   }
-  .language{
-    width: 50px;
-    height: 16px;
+  .languages{
+    width: 100px;
+    height: 22px;
     border: gray;
     border-style: solid;
     border-width: 1px;
     border-radius: 5px;
     font-size: 13px;
-    padding-left: 3px;
     font-family: Sf-Pro-Bold;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+  .language-box{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 325px;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+  }
   .logo{
-    width:12px;
-    height:12px;
+    width:20px;
+    height:20px;
     margin-right: 4px;
   }
+  #title{
+    font-size: 33px;
+    font-family: Sf-Pro-Bold;
+    text-underline-position: under;
+  }
 
+  #points{
+    margin-top: 30px;
+  }
   /*Experience section*/
   h1{
-    width: 380px;
-    height: 75px;
+    width: 350px;
+    height: 100px;
     margin: 2px;
     font-family: Sf-Pro-Bold;
     font-size: 65px;
@@ -238,7 +285,7 @@ header nav {
   }
   
   @keyframes faded{
-    from {color: #141414;}
+    from {color: #333333;}
     to {color: #eaeaea;;}
   }
   
@@ -254,6 +301,61 @@ header nav {
     100% {
       transform: rotate(360deg);
     }
+  }
+    #arrow-test{
+      position:absolute; 
+      width:100%;
+      height:100%;
+      top:0;
+      left: 0;
+    
+      z-index: 1;
+    }
+
+
+  .arrows {
+    width: 60px;
+    height: 72px;
+    
+  }
+  
+  .arrows path {
+    stroke: #2994D1;
+    fill: transparent;
+    stroke-width: 1px;	
+    animation: arrow 2s infinite;
+    -webkit-animation: arrow 2s infinite; 
+  }
+  
+  @keyframes arrow
+  {
+  0% {opacity:0}
+  40% {opacity:1}
+  80% {opacity:0}
+  100% {opacity:0}
+  }
+  
+  @-webkit-keyframes arrow /*Safari and Chrome*/
+  {
+  0% {opacity:0}
+  40% {opacity:1}
+  80% {opacity:0}
+  100% {opacity:0}
+  }
+  
+  .arrows path.a1 {
+    animation-delay:-1s;
+    -webkit-animation-delay:-1s; 
+  }
+  
+  .arrows path.a2 {
+    animation-delay:-0.5s;
+    -webkit-animation-delay:-0.5s; 
+  }
+  
+  .arrows path.a3 {	
+    animation-delay:0s;
+    -webkit-animation-delay:0s; 
   }
 
   
