@@ -8,16 +8,21 @@ let selectedCompany = "WM";
 function myFunction(){
     const name = document.getElementById("full-name");
     element.classList.toggle("dark-mode");
-    
+    const end = document.getElementById('end');
+    const icon = document.getElementById('mode');
     if(element.classList.contains("dark-mode")){
         localStorage.setItem('theme','dark')
         mode = 'dark';
         name.style.color = 'tomato';
+        end.style.backgroundColor = '#35383Ee6'
+        icon.src = 'logos/sun.png'
     }
     else{
         localStorage.setItem('theme', 'light')
         mode = 'light';
         name.style.color = '#5360FD';
+        end.style.backgroundColor = '#C3b79de6'
+        icon.src = 'logos/moon.png'
     }
     
     changeDescription(selectedCompany);
@@ -26,14 +31,20 @@ function myFunction(){
 window.addEventListener('DOMContentLoaded', () =>{
     const user_saved = localStorage.getItem('theme');
     const name = document.getElementById("full-name");
+    const end = document.getElementById('end');
+    const icon = document.getElementById('mode');
     if(user_saved == 'dark'){
         element.classList.add("dark-mode");
         mode = 'dark';
         name.style.color = 'tomato';
+        end.style.backgroundColor = '#35383Ee6'
+        icon.src = 'logos/sun.png'
     }
     else{
         mode = 'light';
         name.style.color = '#5360FD';
+        end.style.backgroundColor = '#C3b79de6'
+        icon.src = 'logos/moon.png'
     }
     changeDescription(selectedCompany);
 });
@@ -54,8 +65,6 @@ function changeOpacity(id){
 
 function changeDescription(id){
     const description = document.getElementById("company-description");
-    const languagesContainer = document.querySelector('.language-box');
-    const titles = document.getElementById("title");
     let color_query;
     
     if(mode == 'dark'){
@@ -79,7 +88,7 @@ function changeDescription(id){
             points: `
                 <li>Developed a <strong> C#/.NET </strong> and <strong>SQL</strong> application to enhance and provide modern features to Fastlane(WM's POS System)</li>
                 <li>Updated<strong> SQL queries</strong> to enhance the Fastlane application in <strong>Oracle</strong> and <strong>SSMS </strong>databases for major project release
-                <li><strong>Automated</strong> the email ticketing process using Twilio and stored ticket data on AWS S3, streamlining operations.</li>
+                <li><strong>Automated</strong> the email ticketing process using <strong>Twilio</strong> and stored ticket data on <strong>AWS S3</strong>, streamlining operations.</li>
                 `,
     
         },
@@ -93,9 +102,9 @@ function changeDescription(id){
             `,
             dates: "January-May 2024",
             points: `
-                <li>Designed and implemented a responsive website for a tech consulting firm.</li>
+                <li>Designed and implemented a responsive website for a startup tech consulting firm.</li>
                 <li>Enhanced scheduling features and showcased the company’s portfolio.</li>
-                <li>Collaborated with a team using Agile methodologies to deliver ahead of schedule.</li>
+                <li>Collaborated with a team using <strong>Agile</strong>methodologies to deliver ahead of schedule.</li>
             `,
         },
         Steel: {
@@ -106,8 +115,8 @@ function changeDescription(id){
             `,
             dates: "January-May 2022",
             points: `
-              <li>Mentored students in Java programming and coding practices.</li>
-        <li>Created a supportive learning environment with personalized guidance.</li>
+              <li>Mentored students in Java and Python learning</li>
+        <li>Helped design learning ciriculum</li>
         <li>Assisted in organizing and running coding workshops and events.</li>
             `,
         },

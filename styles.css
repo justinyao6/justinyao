@@ -6,7 +6,126 @@
   font-family: Sf-Pro-Light;
   src: url(San-Francisco-Pro-Fonts-master/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Light.otf);
 }
+@font-face {
+  font-family: Sf-Pro-Rounded-Light;
+  src: url(San-Francisco-Pro-Fonts-master/San-Francisco-Pro-Fonts-master/SF-Pro-Rounded-Light.otf);
+}
+@font-face {
+  font-family: Sf-Pro-Rounded-Black;
+  src: url(San-Francisco-Pro-Fonts-master/San-Francisco-Pro-Fonts-master/SF-Pro-Rounded-Black.otf);
+}
+@font-face {
+  font-family: Sf-Pro-Rounded-Medium;
+  src: url(San-Francisco-Pro-Fonts-master/San-Francisco-Pro-Fonts-master/SF-Pro-Rounded-Medium.otf);
+}
+@font-face {
+  font-family: Sf-Pro-Rounded-Semibold;
+  src: url(San-Francisco-Pro-Fonts-master/San-Francisco-Pro-Fonts-master/SF-Pro-Rounded-Semibold.otf);
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 2em;
+}
 
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px     rgba(0,0,0,0.3); 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 5px     rgba(0,0,0,0.5); 
+}
+h1{
+  width: 350px;
+  height: 100px;
+  margin: 2px;
+  font-family: Sf-Pro-Bold;
+  font-size: 65px;
+}
+h2{
+  width: 230px;
+  height: 50px;
+  animation-name: fade;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  opacity: 0;
+  margin-top: 8px;
+}
+
+@keyframes faded{
+  from {color: #333333;}
+  to {color: #eaeaea;;}
+}
+
+@keyframes fade{
+  0% {opacity: 0;}
+  50% {opacity: 1;}
+  100%{opacity: 0;}
+}
+@keyframes rotateCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+  #arrow-test{
+    position:absolute; 
+    width:100%;
+    height:100%;
+    top:0;
+    left: 0;
+  
+    z-index: 1;
+  }
+
+
+.arrows {
+  width: 60px;
+  height: 72px;
+  
+}
+
+.arrows path {
+  stroke: #2994D1;
+  fill: transparent;
+  stroke-width: 1px;	
+  animation: arrow 2s infinite;
+  -webkit-animation: arrow 2s infinite; 
+}
+
+@keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+.arrows path.a1 {
+  animation-delay:-1s;
+  -webkit-animation-delay:-1s; 
+}
+
+.arrows path.a2 {
+  animation-delay:-0.5s;
+  -webkit-animation-delay:-0.5s; 
+}
+
+.arrows path.a3 {	
+  animation-delay:0s;
+  -webkit-animation-delay:0s; 
+}
 
 body{
     background-color: #eaeaea;
@@ -16,13 +135,17 @@ body{
     margin: 0;
     transition: background-color 1.25s ease-in-out, color 1.25s ease-in-out;
     font-family: Sf-Pro-Light;
-    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   } 
 
   html,body{
     scroll-behavior: smooth;
   }
- 
   .container{
     margin: auto;
     margin-top: 10px;
@@ -31,13 +154,23 @@ body{
     flex-direction: column;
     width: 50%;
   }
-  
+ 
   .dark-mode{
     background-color: #333333;
     color: #eaeaea;
   }
+  #mode{
+    height: 25px;
+    width: 25px;
+  }
   .mode-button{
+    margin-left: 10px;
     margin-right: 15px;
+    color: inherit;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
   }
   .header {
     width: 100%;
@@ -76,7 +209,7 @@ header nav {
     text-decoration: none;
     font-size: 1rem;
     margin-right: 5px;
-    transition: 1s;
+    transition: 0.5s ease;
     
 }
 .header nav ul li a:visited,
@@ -96,7 +229,7 @@ header nav {
     margin: auto;
     position: relative;       
     width: 80px;
-    height: 80px;        
+    height: 70px;        
     animation: rotateCircle 4s linear infinite; 
   }
 
@@ -123,6 +256,33 @@ header nav {
     display: flex;
     
   }
+  #socials{
+    display: flex;
+    gap: 20px;
+  }
+  #socials img{
+    width: 40px;
+    height: 40px;
+    transition: 0.25s ease;
+    
+  }
+  #socials img:hover{
+    width: 50px;
+    height: 50px;
+  }
+  #github{
+    border-radius: 25px;
+  }
+  #github:hover{
+    background-color: orange;
+  }
+  #linkedin{
+    border-radius: 8px;
+  }
+  #linkedin:hover{
+    background-color: #0077B5;
+  }
+
   /* ====== Position Each Dot Around the Circle ====== */
   /* Lower the 60px to bring them closer; increase to push them farther out */
   #test1 {
@@ -169,6 +329,7 @@ header nav {
   /*Experience section*/
   .Experience{
     margin: auto;
+    margin-top: 30px;
     display: flex;
     flex-direction: row;
     height: 450px;
@@ -267,96 +428,122 @@ header nav {
     margin-top: 30px;
   }
   /*Experience section*/
-  h1{
-    width: 350px;
-    height: 100px;
-    margin: 2px;
-    font-family: Sf-Pro-Bold;
-    font-size: 65px;
-  }
-  h2{
-    width: 230px;
-    height: 50px;
-    animation-name: fade;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-    opacity: 0;
-    margin-top: 8px;
-  }
-  
-  @keyframes faded{
-    from {color: #333333;}
-    to {color: #eaeaea;;}
-  }
-  
-  @keyframes fade{
-    0% {opacity: 0;}
-    50% {opacity: 1;}
-    100%{opacity: 0;}
-  }
-  @keyframes rotateCircle {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-    #arrow-test{
-      position:absolute; 
-      width:100%;
-      height:100%;
-      top:0;
-      left: 0;
-    
-      z-index: 1;
-    }
+ 
 
+/*project section*/
+.my-projects{
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 95%;
+  margin: auto;
 
-  .arrows {
-    width: 60px;
-    height: 72px;
-    
-  }
+}
+.project-cards{
+    width: 400px;
+    height: 500px;
+    border: rgb(125, 136, 151);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.25s linear;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.project-cards:hover{
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+#CBRE{
+  cursor: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 40" height="24" width="24"><text y="28" font-size="32">👑</text></svg>'), auto;
+}
+#project-images{
+  width: 400px;
+  height: 180px;
+}
+#project-logos{
+  display: inline-flex;
+  width: auto;
+  height: auto;
+  border: gray;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-family: Sf-Pro-Rounded-Semibold;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-right: 3px;
+  padding-right: 4px;
+  padding-left: 2px;
   
-  .arrows path {
-    stroke: #2994D1;
-    fill: transparent;
-    stroke-width: 1px;	
-    animation: arrow 2s infinite;
-    -webkit-animation: arrow 2s infinite; 
-  }
-  
-  @keyframes arrow
-  {
-  0% {opacity:0}
-  40% {opacity:1}
-  80% {opacity:0}
-  100% {opacity:0}
-  }
-  
-  @-webkit-keyframes arrow /*Safari and Chrome*/
-  {
-  0% {opacity:0}
-  40% {opacity:1}
-  80% {opacity:0}
-  100% {opacity:0}
-  }
-  
-  .arrows path.a1 {
-    animation-delay:-1s;
-    -webkit-animation-delay:-1s; 
-  }
-  
-  .arrows path.a2 {
-    animation-delay:-0.5s;
-    -webkit-animation-delay:-0.5s; 
-  }
-  
-  .arrows path.a3 {	
-    animation-delay:0s;
-    -webkit-animation-delay:0s; 
-  }
+}
+#project-logo{
+  width: 24px;
+  height: 24px;
+  margin-right: 3px;
+}
+#project-overall{
+  padding-left: 10px;
+}
+#project-description{
+  font-family:Sf-Pro-Rounded-Medium;
+  line-height: 1.7;
+
+}
+#project-title{
+  font-family: Sf-Pro-Rounded-light;
+  font-size: 25px;
+}
+
+/*project section*/
+
+#view{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  cursor: pointer;
+  font-family: Sf-Pro-Bold;
+  font-size: 18px;
+  width: 200px;
+  margin-top: 5px
+}
+#views{
+  border-bottom: 2px solid transparent;
+  width: 160px;
+  transition: 0.1s ease;
+}
+#view:hover #views{
+  border-color: gray;
+}
+#view:hover #forward{
+  transform: translateX(5px);
+}
+#forward{
+  width: 20px;
+  height: 20px;
+  transition: transform 0.1s linear;
+}
+
+.back-to-top-transition{
+  display: flex;
+  margin: auto;
+  margin-top: 50px;
+  width: auto;
+  position: relative;
+}
+footer{ 
+  background-color: #35383ec4;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+}
 
   
 

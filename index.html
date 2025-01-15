@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ningning's page</title>
+  <title>justinyao</title>
   <link rel="stylesheet" href="styles.css">
   <script type="text/javascript" src="src/mode.js" defer></script>
 </head>
 <body>
-
+    <a name="top"></a>
     <header class="header">
         <nav>
             <ul>
@@ -16,7 +16,8 @@
                 <li><a href="#projects" id="color2">Projects</a></li>
             </ul>
         </nav>
-        <button onclick="myFunction()" class="mode-button">Mode</button>
+        <button onclick="myFunction()" class="mode-button" ><img src="logos/moon.png" alt="" id="mode"></button>
+        
     </header>
     <div class = "loading">
       <div id = 'test1'>
@@ -41,12 +42,17 @@
     <div class = "container">
         
         <div id="formatting">
-          <p style="font-size: 30px;">Howdy! My name is</p>
+          <p style="font-size: 30px; margin-bottom: 15px;">Howdy! My name is</p>
           <div id="name">
             <h1 style="color: tomato;" id="full-name">
               Justin Yao.
             </h1>
             <h2 id="description"></h2>
+          </div>
+          <div id="socials">
+            <a href="https://github.com/justinyao6" target="_blank"><img src="logos/github.svg" alt="github" id="github"></a>
+            <a href="https://www.linkedin.com/in/justin-yao04/" target="_blank"><img src="logos/linkedin.png" alt="linkedin" id="linkedin"></a>
+            <a href="mailto:justin6.ya022@gmail.com"><img src="logos/mail.webp" alt="mail"></a>
           </div>
           <p id="info">I'm currently pursuing a <em>Bachelor's in Computer Science</em> at <strong>UT Dallas</strong>. <br> 
             Interested in <strong>Software Engineering</strong>, Creating <strong>LLMs</strong>, Understanding Business <strong>Models</strong>, and More. <small>maybe quant.</small>
@@ -91,16 +97,97 @@
         <path class="a2" d="M0 13 L20 34 L40 13"></path>
         <path class="a3" d="M0 26 L20 47 L40 26"></path>
       </svg>
-      
-      
     </div>
 
-    <section>
-      <div>
-        typestuff
-        typestuff
+    <section class="my-projects">
+      
+    <div class="project-cards" id="CBRE" data-url="https://devpost.com/software/value-proposition-generator-aljgry">
+        <img src="logos/cbregif.gif" alt="" id="project-images">
+        <div id="project-overall">
+          <strong id="project-title"><u>Value Proposition Generator</u>- HackUTD <span style="color: gold; font-family: Sf-Pro-Rounded-Medium;">Winner</span>(CBRE)</strong>
+          <br>
+          <div id="project-logos">
+              <img src="logos/svelte.png" alt="Svelte" id="project-logo" style="width: 32px;"> Svelte 
+          </div>
+          <div id="project-logos">
+            <img src="logos/tensorflow.png" alt="TensorFlow" id="project-logo"> TensorFlow   
+          </div>
+          <div id="project-logos">
+            <img src="logos/flask.png" alt="Flask" id="project-logo"> Flask
+          </div>
+          <p id="project-description"> Assist real estate agents and consumers by creating value propositions of properties based on various 
+            machine learning algorithms that analyze inputs such as photos, the location, age, etc. 
+            </p>
+          <div><a href="https://github.com/justinyao6/hackutd23" target="blank" onclick="event.stopPropagation()" style="color: inherit;"><u>Github</u></a></div>
+        </div>
+    </div>
+
+    <div class="project-cards" id="Sachs" data-url="https://devpost.com/software/goldrush">
+      <img src="logos/sachgif.gif" alt="" id="project-images">
+      <div id="project-overall">
+        <strong id="project-title"><u>Goldrush</u>- HackUTD(Goldman Sachs)</strong>
+        <br>
+        <div id="project-logos">
+            <img src="logos/angular.png" alt="Angular" id="project-logo" > Angular
+        </div>
+        <div id="project-logos">
+          <img src="logos/tensorflow.png" alt="TensorFlow" id="project-logo"> TensorFlow   
+        </div>
+        <div id="project-logos">
+          <img src="logos/flask.png" alt="Flask" id="project-logo"> Flask
+        </div>
+        <p id="project-description"> Generates a personalized page for users that want to discover their 
+          investment portfolio and provide microloan plans based off credit history
+        </p>
+        <br>
+        <div><a href="https://github.com/justinyao6/hackutd24" target="blank" onclick="event.stopPropagation()" style="color: inherit;"><u>Github</u></a></div>
       </div>
+    </div>
+
+    <div class="project-cards" id="Solar" data-url="https://github.com/justinyao6/solarsystem">
+      <img src="logos/solarterst.gif" alt="" id="project-images">
+      <div id="project-overall">
+        <strong id="project-title"><u>Solar System</u>- Computer Graphics Project</strong>
+        <br>
+        <div id="project-logos">
+            <img src="logos/opengl.svg" alt="OpenGl" id="project-logo" > OpenGl
+        </div>
+        <div id="project-logos">
+          <img src="logos/c++.png" alt="c++" id="project-logo"> C++  
+        </div>
+        
+        <p id="project-description"> 
+          Play around a fun and interactive Solar System!
+        </p>
+      </div>
+    </div>
+    
     </section>
+    
+    <div id="view" data-url="https://github.com/justinyao6?tab=repositories">
+      <div id="views">View other Projects 
+      </div>
+      <img src="logos/forward.svg" alt="" id="forward">
+    </div>
+   
+    <footer id="end" >
+      <div class="back-to-top-transition">
+        <a href="#top"><span id="arrow-test"></span></a>
+        <svg class="arrows">
+          <path class="a3" d="M0 20 L20 0 L40 20"></path>
+          <path class="a2" d="M0 34 L20 13 L40 34"></path>
+          <path class="a1" d="M0 47 L20 26 L40 47"></path>
+        </svg>
+        <p id="projects">Back to the Top</p>
+        <svg class="arrows">
+          <path class="a3" d="M0 20 L20 0 L40 20"></path>
+          <path class="a2" d="M0 34 L20 13 L40 34"></path>
+          <path class="a1" d="M0 47 L20 26 L40 47"></path>
+        </svg>
+      </div>
+      <p>designed and created by jyao😊</p>
+    </footer>
   <script type="module" src="./src/script.js"></script>
+  
 </body>
 </html>
