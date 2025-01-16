@@ -79,10 +79,10 @@ function changeDescription(id){
         WM: {
             title: `<u> Software Engineer</u>`+ color_query + ` @ WM</span>`,
             languages: `
-                <div class="languages"><img src="logos/clogo.png" alt="C#" class="logo"> C#</div>
-                <div class="languages"><img src="logos/Microsoft_.NET_logo.svg.png" alt=".Net" class="logo"> .Net</div>
-                <div class="languages"><img src="logos/aws.png" alt="Aws" class="logo"> AWS</div>
-                <div class="languages"><img src="logos/oracle.png" alt="SQL" class="logo"> SQL</div>
+                <div class="languages"><img src="./logos/clogo.png" alt="C#" class="logo"> C#</div>
+                <div class="languages"><img src="./logos/Microsoft_.NET_logo.svg.png" alt=".Net" class="logo"> .Net</div>
+                <div class="languages"><img src="./logos/aws.png" alt="Aws" class="logo"> AWS</div>
+                <div class="languages"><img src="./logos/oracle.png" alt="SQL" class="logo"> SQL</div>
             `,
             dates: "June-August 2024",
             points: `
@@ -95,9 +95,9 @@ function changeDescription(id){
         TekCrafter: {
             title: `<u>Frontend Developer</u>`+ color_query+ ` @ TekCrafter</span>`,
             languages: `
-                <div class="languages"><img src="logos/jslogo.png" alt="JavaScript" class="logo">JavaScript</div>
-                <div class="languages"><img src="logos/html5.png" alt="HTML" class="logo">HTML</div>
-                <div class="languages"><img src="logos/css.svg" alt="CSS" class="logo">CSS</div>
+                <div class="languages"><img src="./logos/jslogo.png" alt="JavaScript" class="logo">JavaScript</div>
+                <div class="languages"><img src="./logos/html5.png" alt="HTML" class="logo">HTML</div>
+                <div class="languages"><img src="./logos/css.svg" alt="CSS" class="logo">CSS</div>
             
             `,
             dates: "January-May 2024",
@@ -110,8 +110,8 @@ function changeDescription(id){
         Steel: {
             title: `<u>Teaching Assistant</u>` + color_query+ ` @ Steel City Codes</span>`,
             languages: `
-                <div class="languages"><img src="logos/java.webp" alt="Java" class="logo">Java</div>
-                <div class="languages"><img src="logos/python.png" alt="Python" class="logo">Python</div>
+                <div class="languages"><img src="./logos/java.webp" alt="Java" class="logo">Java</div>
+                <div class="languages"><img src="./logos/python.png" alt="Python" class="logo">Python</div>
             `,
             dates: "January-May 2022",
             points: `
